@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:600|Rouge+Script|Schoolbell');
+/* Modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    background-color: #111;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 50px 1fr;
+    grid-template-rows: 35vh 50vh 10vh;
+    align-items: center;
+    
+}
+
+header {
+    width: 100%;
+    margin-top: 130px;
+    height: 375px;
+    padding: 0;
+    background-color: whitesmoke;
+    color: #111;
+    grid-column: 1/-1;
+}
+
+.welcome{
+    font-family: 'Rouge Script', Geneva, Tahoma, sans-serif;
+    font-size: 7em;
+    margin-top: 0;
+    margin-left: 25px;
+    margin-bottom: 0;
+}
+
+.school{
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Schoolbell', Geneva, Tahoma, sans-serif;
+    margin-top: -70px;
+    padding: 0;
+    position: absolute;
+    display: inline-block;
+    
+}
+
+.visitor{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    top: -30px;
+
+}
+
+.schoolCheck{
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Schoolbell', Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    padding: 0;
+    position: absolute;
+    display: inline-block;
+    
+}
+
+.visitorCheck{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    top: -30px;
+
+}
+
+.logo{
+    float: right;
+    clear: left;
+    margin-top: -5px;
+    margin-right: 50px;
+}
+
+
+
+main{
+    background-color: #111;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+}
+
+
+
+.checkInButton {
+    margin-top: 10vh;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    text-decoration: none;
+    background-color: #E8E8E8;
+    background-size: 100%, 100%, 100%, 4px 4px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    color: #3A474D;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-shadow: 0px 1px #fff, 0px -1px #262F33;
+}
+
+.checkInButton span{
+    text-align: center;
+    line-height: 2.4;
+}
+.checkInButton:hover {
+    color: #156aba;
+    text-shadow: 0px -1px #07214c;
+    cursor: pointer;
+}
+
+.checkInButton:active {
+    transform: scale(.90);
+}
+
+
+
+.checkOutButton {
+    margin-top: 10vh;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    text-decoration: none;
+    background-color: #E8E8E8;
+    background-size: 100%, 100%, 100%, 4px 4px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    color: #3A474D;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-shadow: 0px 1px #fff, 0px -1px #262F33;
+    
+}
+
+.checkOutButton span{
+    text-align: center;
+    line-height: 2.4;
+}
+
+.checkOutButton:active {
+    transform: scale(.90);
+}
+
+.checkOutButton:hover {
+    color: #156aba;
+    text-shadow: 0px -1px #07214c;
+    cursor: pointer;
+}
+
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: whitesmoke;
+   
+
+}
+
+#admin {
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: #111;
+    color: whitesmoke;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid whitesmoke;
+}
+
+#admin > a {
+    background-color: #111;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    z-index: 10;
+    position: relative;
+    top: 8px; 
+}
+
+#help {
+    text-align: center;
+    background-color: #111;
+    color: whitesmoke;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid whitesmoke;
+}
+
+#help > a {
+    background-color: #111;
+    color: whitesmoke;
+    text-decoration: none;
+    position: relative;
+    top: 6px;  
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.help{
+    float: right;
+    clear: left;
+    margin-top: 0;
+}
+
+#help > a > img {
+    padding-left: 3px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    margin: 5px 0 5px 0;
+    position: absolute;
+    width: 100%;
+    clear: right;
+    text-align: center;
+}
+
+/*Check In Page*/
+
+.checkInPage {
+    background-color: whitesmoke;
+    width: 50vw;
+    margin: 10px auto;
+    height: 40vh;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 33fr 66fr;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.logoDiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.date {
+    margin-left: -35px;
+    margin-top: -10px;
+}
+
+datalist{
+    width: 100%;
+}
+
+.chosen {
+    width: 100%;
+    position: relative;
+}
+
+.chosen-container{
+    width: 100%;
+    position: relative;
+    height:35px !important;
+    font-size: 16px !important;
+    margin-top: -15px;
+}
+
+input[type=text] {
+    position: relative;
+    width: 100%;
+    height:35px;
+    padding:5px;
+    margin: -35px auto;
+    background: none;
+    border:none;
+    border-bottom: 1px solid black;
+    color:#4f4f4f;
+    font-size:16px;
+    border-radius:5px
+    }
+
+
+
+textarea[type=text] {
+    position: relative;
+    width: 100%;
+    height:50px;
+    padding:5px;
+    margin-bottom:0px;
+    margin-top:5px;
+    background: none;
+    border:none;
+    border-bottom: 1px solid black;
+    color:#4f4f4f;
+    font-size:16px;
+    border-radius:5px 
+}
+
+#notes {
+    width: 100%;
+    height:50px;
+    padding:5px;
+    margin-bottom:0px;
+    margin-top:-5px;
+    background: none;
+    border:none;
+    border-bottom: 1px solid black;
+    color:#4f4f4f;
+    font-size:16px;
+    border-radius:5px 
+}
+
+
+.submit{
+    float: right;
+    width: 25%;
+    font-size:16px;
+    background:linear-gradient(#6da7dd 5%,#156aba 100%);
+    border:1px solid #156aba;
+    color:#111;
+    font-weight:700;
+    cursor:pointer;
+    border-radius:5px;
+    margin-top: -5px;
+    padding:10px 0;
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    outline:none;
+    }
+
+.backButton{
+    width: 25%;
+    font-size:16px;
+    background:linear-gradient(#6da7dd 5%,#156aba 100%);
+    border:1px solid #156aba;
+    color:#111;
+    font-weight:700;
+    cursor:pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -50px;
+    left: 0;    
+    margin-top: -5px;
+    padding:10px 0;
+    outline:none;
+}
+
+.wrapperOut {
+    display: grid;
+    grid-template-rows: 1fr 32px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+
+.back {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+}
+
+.backLink {
+text-decoration: none;
+    color: whitesmoke;
+
+}
+
+/*Footer*/
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: whitesmoke;
+
+}
+
+#admin {
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: #111;
+    color: whitesmoke;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid whitesmoke;
+}
+
+#admin > a {
+    background-color: #111;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    z-index: 10;
+}
+
+#help {
+    text-align: center;
+    background-color: #111;
+    color: whitesmoke;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid whitesmoke;
+}
+
+#help > a {
+    background-color: #111;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.help{
+    float: right;
+    clear: left;
+    margin-top: 0;
+}
+
+#help > a > img {
+    padding-left: 3px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    margin: 5px 0 5px 0;
+    position: absolute;
+    width: 100%;
+    clear: right;
+    text-align: center;
+}
+
+/*Check Out*/
+.out{
+    font-size: 3em;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.visit{
+    font-size: 5em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+
+
+
+@media only screen and (max-width: 1067px) {
+    .school {
+        margin-top: -40px;
+        line-height: 1.5;
+        font-size: 3em;
+    }
+    .visitor {
+        font-size: 2.5rem;
+    }
+    .checkOutPage .checkInPage {
+        background-color: whitesmoke;
+        width: 70%;
+        margin: 2px 0 0 -55px;
+        position: fixed;
+        height: 45vh;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 35px 1fr;
+    }
+    
+    
+    .logo {
+        display: none;
+        visibility: hidden;
+    }
+
+    .wrapperOut {
+        margin-top: 35px;
+    }
+
+    .date {
+        margin-left: 0px;
+        margin-top: -35px;
+        font-size: 1.5em;
+
+    }
+
+    .chosen {
+        width: 100%;
+        position: relative;
+    }
+    
+    .chosen-container{
+        width: 100%;
+        position: relative;
+        height:35px !important;
+        font-size: 16px !important;
+    }
+    
+}
+
+
+
+
+@media only screen and (min-width : 1068px) and (max-width : 1400px) {
+    
+    .checkInPage {
+    background-color: whitesmoke;
+    width: 100%;
+    left: 50%;
+    margin: 2px auto;
+    position: relative;
+    height: 45vh;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 33fr 66fr;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.date {
+    margin-left: -35px;
+    margin-top: -10px;
+}
+
+.chosen {
+    width: 100%;
+    position: relative;
+}
+
+.chosen-container{
+    width: 100%;
+    position: relative;
+    height:35px !important;
+    font-size: 16px !important;
+}
+
+.visit {
+    font-size: 4.5em;
+}
+
+.out {
+    font-size: 2.5em;
+}
+}
+
+
+    

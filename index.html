@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href= "./css/style.css">
+       
+        <script>
+                function passWord() {
+                var testV = 1;
+                var pass1 = prompt('Please Enter Your Password',' ');
+                while (testV < 3) {
+                if (!pass1) 
+                history.go(-1);
+                if (pass1.toLowerCase() == "letmein") {
+                window.open('https://docs.google.com/spreadsheets/d/13Mg3vM2jQj6JEfR1AHFcKV6NBIrSm4TnFr4tr-wSDFE/edit?usp=sharing', '_blank');
+                break;
+                } 
+                testV+=1;
+                var pass1 = 
+                prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+                }
+                if (pass1.toLowerCase()!="password" & testV ==3) 
+                history.go(-1);
+                return " ";
+                } </script>
+        <title>Waukazoo</title>
+    </head>
+    
+<body>
+         
+    <header class="header">
+       
+            <div class="logoimg" style="text-align: right;">
+                <img src="./imgs/logo.png" class="logo" alt="logo" style="width:250px; height:250px">
+            </div>
+            
+            <div class="top">
+            <h1 class="welcome">Welcome!</h1><br/>
+            <h2 class="school">Waukazoo Elementary<br/><span class="visitor">Visitor Check In</span></h2>
+            
+            
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="button1">
+            
+                <a class="checkInButton" href="checkin.html"><span>Check In</span></a>
+        </div>
+        <div class="button2">
+                <a class="checkOutButton" href="checkout.html"><span>Check Out</span></a>
+            
+        </div>
+
+    </main>
+    
+    <footer>
+         <div class="footer">
+            <aside class="left" style="text-align: left">
+                <div id="admin">
+                    <a onClick="passWord()">
+                        <img src="./imgs/lock.png" alt="lock" style="width: 25px; height: 25px;">
+                    </a>
+                </div>
+            </aside>
+            <aside class="center" style="text-align: center">
+                <img src="./imgs/wo.png" alt="west ottawa logo" style="width: 80px; height: 40px;">
+            </aside>
+            <aside class="right" style="text-align: right">
+                <div id="help">
+                    <a href="help.html"><img src="./imgs/help.png" alt="help" style="width: 30px; height: 30px;"></a>
+                </div>
+            </aside>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+
+</body>
+
+
+</html>
