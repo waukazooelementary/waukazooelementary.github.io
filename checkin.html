@@ -79,7 +79,7 @@
       <h3 class="visit">VISITOR</h3>
     </div>
     <div class="chosen-container">
-    <select class="chosen" name="Name" id="volunteersList">
+    <select required class="chosen" name="Name" id="volunteersList">
       <option selected>Search for Your Name</option>
     </select>
     </div>
@@ -187,9 +187,18 @@ document.getElementById('time').innerHTML = time;
   var span = document.getElementsByClassName("close")[0];
   
   // When the user clicks the button, open the modal 
+  
+  
   btn.onclick = function() {
-    modal.style.display = "block";
+    var selName = document.getElementById('volunteersList');
+        if (selName.selectedIndex < 1)  { 
+        alert("Please select your name."); 
+        selName.focus(); 
+        return false; 
+    } 
+   return modal.style.display = "block";
   }
+  
   
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
