@@ -24,11 +24,13 @@
                 elOption = frag.appendChild(document.createElement('option'));
                 elOption.text = row.firstname + " " + row.lastname;
                 volunteerSelect.appendChild(elOption);
-              }
+              } 
           });
                   $(volunteerSelect).chosen();
             }
-          }); 
+          });
+
+           
 </script>
  
         <script>
@@ -82,6 +84,7 @@
       <option selected>Search for Your Name</option>
     </select>
    </div>  
+   <div id="guestName" class="guestOut"></div>
   </div>
 
 </form>
@@ -187,6 +190,23 @@ document.getElementById('time').innerHTML = time;
     }
   }
 </script>
+<script>
+  
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+  
+      $(document).ready(function(){
+          $("select#volunteersList").change(function(){
+              var guestName = document.getElementById('guestName');
+              if ($(this).children("option:selected").val() === "Guest Visitor") {
+                guestName.innerHTML = 'Name: <input type="text" name="Other" />';
+              } else
+                document.getElementById("guestName").innerHTML= '';
+              })
+      });
+          
+  
+  </script>
 </body>   
 </html>
     

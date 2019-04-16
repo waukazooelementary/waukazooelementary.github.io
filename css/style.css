@@ -1,5 +1,42 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:600|Rouge+Script|Schoolbell');
 /* Modal */
+.wrapperOut {
+    display: grid;
+    grid-template-rows: 1fr 32px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5px;
+}
+
+#guestName {
+    position: relative;
+    width: 100%;
+    height:35px;
+    padding:5px;
+    margin: -50px auto;
+    background: none;
+    border:none;
+    border-bottom: 1px solid black;
+    color:#4f4f4f;
+    font-size:16px;
+}
+
+.datalist {
+    margin-top: -30px;
+    position: relative;
+    width: 100%;
+    display: grid;
+}
+
+#notes {
+    margin-top: -10px;
+    height: 35px;
+}
+
+.guestOut {
+    position: relative;
+    margin-top: -25px!important;
+}
 
 .modal {
     display: none; /* Hidden by default */
@@ -322,10 +359,6 @@ main{
     margin-top: -10px;
 }
 
-datalist{
-    width: 100%;
-}
-
 .chosen {
     width: 100%;
     position: relative;
@@ -336,54 +369,8 @@ datalist{
     position: relative;
     height:35px !important;
     font-size: 16px !important;
-    margin-top: -15px;
+    margin-top: -25px;
 }
-
-input[type=text] {
-    position: relative;
-    width: 100%;
-    height:35px;
-    padding:5px;
-    margin: -35px auto;
-    background: none;
-    border:none;
-    border-bottom: 1px solid black;
-    color:#4f4f4f;
-    font-size:16px;
-    border-radius:5px
-    }
-
-
-
-textarea[type=text] {
-    position: relative;
-    width: 100%;
-    height:50px;
-    padding:5px;
-    margin-bottom:0px;
-    margin-top:5px;
-    background: none;
-    border:none;
-    border-bottom: 1px solid black;
-    color:#4f4f4f;
-    font-size:16px;
-    border-radius:5px 
-}
-
-#notes {
-    width: 100%;
-    height:50px;
-    padding:5px;
-    margin-bottom:0px;
-    margin-top:-5px;
-    background: none;
-    border:none;
-    border-bottom: 1px solid black;
-    color:#4f4f4f;
-    font-size:16px;
-    border-radius:5px 
-}
-
 
 .submit{
     float: right;
@@ -419,16 +406,6 @@ textarea[type=text] {
     padding:10px 0;
     outline:none;
 }
-
-.wrapperOut {
-    display: grid;
-    grid-template-rows: 1fr 32px;
-    justify-content: center;
-    align-content: center;
-}
-
-
-
 
 .back {
     background-color: transparent;
@@ -528,7 +505,7 @@ text-decoration: none;
 .out{
     font-size: 3em;
     text-align: center;
-    margin-top: -50px;
+    margin-top: -65px;
 }
 
 .visit{

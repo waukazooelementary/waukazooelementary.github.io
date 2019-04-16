@@ -78,14 +78,19 @@
       <div>
       <h3 class="visit">VISITOR</h3>
     </div>
+   
+    
     <div class="chosen-container">
     <select required class="chosen" name="Name" id="volunteersList">
       <option selected>Search for Your Name</option>
     </select>
     </div>
 
-    <br/>
+    <div id="guestName"></div>
 
+    <br>
+
+    <div class = "datalist">
     <input required type="text" list="select" name="Location" id="class" placeholder="Choose Location or Teacher's Name &#9660;" style="text-align: right;"/>
     <datalist class="location" id="select" onchange="onSelectChange()" name="Location">
       <option>-Choose Location or type in Teacher's Name-</option>
@@ -94,12 +99,13 @@
       <option value="Office"></option>
       <option value="Playground"></option>    
     </datalist>
-
-    <br/>
+</div>
+    <br>
 
     <textarea id="notes" name="Notes" placeholder="What will you be doing?" rows="4" style="text-align: right; resize: vertical;"></textarea>
  
-      </div>
+      
+    </div>
     
   </form>
 
@@ -108,16 +114,23 @@
   <button form="test-form" type="submit" class="submit" id="postForm">Submit</button>
   </div>
 
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Thank you! You are now checked in.  You will be automatically redirected to the home page soon.</p>
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Thank you! You are now checked in.  You will be automatically redirected to the home page soon.</p>
+    </div>
+  
   </div>
 
-</div>
+
+
+
+
+
 </main>   
     <footer>
          <div class="footer">
@@ -177,40 +190,58 @@ document.getElementById('time').innerHTML = time;
 </script>
 
 <script>
-  // Get the modal
-  var modal = document.getElementById('myModal');
-  
-  // Get the button that opens the modal
-  var btn = document.getElementById("postForm");
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("postForm");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    
+    
+    btn.onclick = function() {
+      var selName = document.getElementById('volunteersList');
+          if (selName.selectedIndex < 1)  { 
+          alert("Please select your name."); 
+          selName.focus(); 
+          return false; 
+      } 
+     return modal.style.display = "block";
+    }
+    
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+<script>
   
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks the button, open the modal 
-  
-  
-  btn.onclick = function() {
-    var selName = document.getElementById('volunteersList');
-        if (selName.selectedIndex < 1)  { 
-        alert("Please select your name."); 
-        selName.focus(); 
-        return false; 
-    } 
-   return modal.style.display = "block";
-  }
-  
-  
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+
+    $(document).ready(function(){
+        $("select#volunteersList").change(function(){
+            var guestName = document.getElementById('guestName');
+            if ($(this).children("option:selected").val() === "Guest Visitor") {
+              guestName.innerHTML = 'Name: <input type="text" name="Other" />';
+            } else
+              document.getElementById("guestName").innerHTML= '';
+            })
+    });
+        
+
 </script>
 
 </body>   
@@ -218,3 +249,4 @@ document.getElementById('time').innerHTML = time;
     
  
   
+    
