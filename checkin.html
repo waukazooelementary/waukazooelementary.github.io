@@ -180,27 +180,31 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzrKqVJEidj98LDaebjqwQX4Ti5tjvWcx52oLBrQwKqDH29_uo/exec'
     const form = document.forms['submit-to-google-sheet']
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
+    form.addEventListener("submit", e => {
+          e.preventDefault();
 
-      fetch(scriptURL, {
-          method: 'POST',
-          body: new FormData(form)
-        })
+          fetch(scriptURL, {
+            method: "POST",
+            body: new FormData(form)
+          });
+          document.getElementById("test-form").reset();
+          window.setTimeout(function() {
+            window.location.href = "index.html";
+          }, 100);
 
-        .then(function (res) {
-          document.getElementById('test-form').reset()
-          if (res.ok) {
-            setTimeout(function () {
-              window.location.href = 'index.html';
-            }, 2000);
-          } else if (res.status == 401) {
-            alert("Oops! You are not authorized.");
-          }
-        }, function (e) {
-          alert("Error submitting form!");
-        });
-    })
+//         .then(function (res) {
+//           document.getElementById('test-form').reset()
+//           if (res.ok) {
+//             setTimeout(function () {
+//               window.location.href = 'index.html';
+//             }, 2000);
+//           } else if (res.status == 401) {
+//             alert("Oops! You are not authorized.");
+//           }
+//         }, function (e) {
+//           alert("Error submitting form!");
+//         });
+//     })
   </script>
 
   <script>
