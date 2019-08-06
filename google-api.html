@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.3/papaparse.min.js"></script>
+
+		<script src="./chosen.js"></script>
+
+		<script src="./index.js"></script>
+		<title>Waukazoo Check In</title>
+
+
+    <script>
+    function makeApiCall() {
+      var params = {
+        // The ID of the spreadsheet to update.
+        spreadsheetId: '1q0r1_RtkY6Pzkrw_FxEs4kIIqPcbuaB6qNwyfD423Tc',  // TODO: Update placeholder value.
+
+        // The A1 notation of the values to update.
+        range: 'Sheet1',  // TODO: Update placeholder value.
+
+        // How the input data should be interpreted.
+        //valueInputOption: '',  // TODO: Update placeholder value.
+      };
+
+    //   var valueRangeBody = {
+    //     // TODO: Add desired properties to the request body. All existing properties
+    //     // will be replaced.
+    //   };
+
+      var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+      request.then(function(response) {
+        // TODO: Change code below to process the `response` object:
+        console.log(response.result);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+    }
+     </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+</head>
+<body>
+		<header class="checkinHeader">
+			<div class="top">
+				<h1 class="schoolCheck">
+					Waukazoo Elementary<br />
+					<span class="visitorCheck">Visitor Check In</span>
+				</h1>
+			</div>
+		</header>
+
+		<main>
+			<div class="checkInPage" id="formArea" style="text-align: center;">
+				<div class="logoDiv" style="text-align:center;">
+					<img src="./imgs/logo.png" class="logo" alt="logo" style="width:250px; height:250px" />
+					<p class="date"><span id="date"></span><br /><span id="time"></span></p>
+				</div>
+    <form name="submit-to-google-sheet" id="test-form" style="text-align: right;">
+					<div class="wrapperOut">
+						<div>
+							<h3 class="visit">VISITOR</h3>
+						</div>
+
+						<div class="chosen-container">
+							<select required class="chosen" name="Name" id="volunteersList">
+								<option selected>Search for Your Name</option>
+							</select>
+						</div>
+
+						<div id="guestName"></div>
+
+						<br />
+
+						<div class="datalist">
+							<input
+								required
+								type="text"
+								list="select"
+								name="Location"
+								id="class"
+								placeholder="Choose Location or Teacher's Name &#9660;"
+								style="text-align: right;"
+							/>
+							<datalist class="location" id="select" onchange="onSelectChange()" name="Location">
+								<option>-Choose Location or type in Teacher's Name-</option>
+								<option value="Lunch Room"></option>
+								<option value="Gymnasium"></option>
+								<option value="Office"></option>
+								<option value="Playground"></option>
+							</datalist>
+						</div>
+						<br />
+
+						<textarea
+							id="notes"
+							name="Notes"
+							placeholder="What will you be doing?"
+							rows="4"
+							style="text-align: right; resize: vertical;"
+						></textarea>
+					</div>
+				</form>
+
+				<button class="backButton" onclick="window.location.href = './index.html';">Back</button>
+				<button form="test-form" type="submit" class="submit" id="postForm" onclick="makeApiCall()"></button>>Submit</button>
+			</div>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<p>
+						Thank you! You are now checked in. You will be automatically redirected to the home page soon.
+					</p>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="footer">
+				<aside class="left" style="text-align: left">
+					<div id="admin">
+						<a onClick="passWord()">
+							<img src="./imgs/lock.png" alt="lock" style="width: 25px; height: 25px;" />
+						</a>
+					</div>
+				</aside>
+				<aside class="center" style="text-align: center">
+					<img src="./imgs/wo.png" alt="west ottawa logo" style="width: 80px; height: 40px;" />
+				</aside>
+				<aside class="right" style="text-align: right">
+					<div id="help">
+						<a href="help.html"
+							><img src="./imgs/help.png" alt="help" style="width: 30px; height: 30px;"
+						/></a>
+					</div>
+				</aside>
+			</div>
+		</footer>
+
+		<script src="./timestamp.js"></script>
+
+		<script src="./modal.js"></script>
+  </body>
+</html>

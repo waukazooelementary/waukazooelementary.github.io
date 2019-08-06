@@ -8,23 +8,11 @@ form.addEventListener('submit', e => {
 		method: 'POST',
 		body: new FormData(form),
 	});
+	document.getElementById('test-form').reset();
 	window.setTimeout(function() {
 		window.location.href = 'index.html';
 	}, 2000);
-	document.getElementById('test-form').reset();
-
-	//     .then(function (res) {
-	//       document.getElementById('test-form').reset()
-	//       if (res.ok) {
-	//         setTimeout(function () {
-	//           window.location.href = 'index.html';
-	//         }, 2000);
-	//       } else if (res.status == 401) {
-	//         alert("Oops! You are not authorized.");
-	//       }
-	//     }, function (e) {
-	//       alert("Error submitting form!");
-	//     });
+	return;
 });
 
 // Get the <span> element that closes the modal

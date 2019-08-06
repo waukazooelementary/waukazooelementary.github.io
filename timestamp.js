@@ -1,9 +1,9 @@
 // get a new date (locale machine date time)
-var date = new Date();
+const date = new Date();
 // get the date as a string
-var n = date.toDateString();
+const n = date.toDateString();
 // get the time as a string
-var time = date.toLocaleTimeString([], {
+const time = date.toLocaleTimeString([], {
 	hour: '2-digit',
 	minute: '2-digit',
 });
