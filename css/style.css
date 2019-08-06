@@ -311,6 +311,10 @@ main {
 	position: relative;
 }
 
+.chosen-single {
+	border-radius: 0 !important;
+}
+
 .chosen-container {
 	width: 100%;
 	position: relative;
@@ -339,6 +343,9 @@ main {
 	font-size: 16px;
 }
 
+textarea {
+	font-family: 'Arial', sans-serif;
+}
 .datalist {
 	margin-top: -30px;
 	position: relative;
