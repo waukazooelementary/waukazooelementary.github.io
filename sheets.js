@@ -15,9 +15,6 @@ form.addEventListener('submit', e => {
 	return;
 });
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName('close')[0];
-
 $(document).ready(function() {
 	$('select#volunteersList').change(function() {
 		var guestName = document.getElementById('guestName');
@@ -26,7 +23,7 @@ $(document).ready(function() {
 				.children('option:selected')
 				.val() === 'Guest Visitor'
 		) {
-			guestName.innerHTML = 'Name: <input type="text" name="Other" />';
+			guestName.innerHTML = '<input type="text" placeholder="Guest Name" class="guest-name" name="Other" />';
 		} else document.getElementById('guestName').innerHTML = '';
 	});
 });
