@@ -14,16 +14,3 @@ form.addEventListener('submit', e => {
 	}, 2000);
 	return;
 });
-
-$(document).ready(function() {
-	$('select#volunteersList').change(function() {
-		var guestName = document.getElementById('guestName');
-		if (
-			$(this)
-				.children('option:selected')
-				.val() === 'Guest Visitor'
-		) {
-			guestName.innerHTML = '<input type="text" placeholder="Guest Name" class="guest-name" name="Other" />';
-		} else document.getElementById('guestName').innerHTML = '';
-	});
-});

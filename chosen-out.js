@@ -17,3 +17,18 @@ Papa.parse(
 		},
 	}
 );
+
+$(document).ready(function() {
+	$('select#volunteersList').change(function() {
+		var guestOut = document.getElementById('guestOut');
+		if (
+			$(this)
+				.children('option:selected')
+				.val() === 'Guest Visitor'
+		) {
+			guestOut.innerHTML = '<input type="text" placeholder="Guest Name" class="guest-out-name" name="Other" />';
+		} else {
+			document.getElementById('guestOut').innerHTML = '';
+		}
+	});
+});

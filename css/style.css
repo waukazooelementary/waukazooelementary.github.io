@@ -346,6 +346,20 @@ main {
 	background-clip: padding-box;
 }
 
+.guest-out-name {
+	text-align: right;
+	position: relative;
+	width: 100%;
+	margin: 15px 0;
+	padding: 3px 0;
+	background: none;
+	border: 1px solid #aaa;
+	color: #111;
+	font-size: 14px;
+	background-image: linear-gradient(#eee 20%, #fff 80%);
+	background-clip: padding-box;
+}
+
 .datalist {
 	margin-top: -30px;
 	position: relative;
