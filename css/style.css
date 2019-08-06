@@ -33,6 +33,8 @@ header {
 	margin-top: 0;
 	margin-left: 25px;
 	margin-bottom: 0;
+	transform-style: preserve-3d;
+	transition: all 0.5s linear;
 }
 
 .school {
@@ -76,8 +78,13 @@ header {
 .logo {
 	float: right;
 	clear: left;
-	margin-top: -5px;
 	margin-right: 50px;
+	transform-style: preserve-3d;
+	transition: all 0.5s linear;
+}
+
+.logo:hover {
+	transform: rotateY(360deg);
 }
 
 /*CENTER*/
