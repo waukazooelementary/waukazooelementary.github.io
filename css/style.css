@@ -82,11 +82,6 @@ header {
 	transform-style: preserve-3d;
 	transition: all 0.5s linear;
 }
-
-.logo:hover {
-	transform: rotateY(360deg);
-}
-
 /*CENTER*/
 
 main {
