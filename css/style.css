@@ -248,6 +248,19 @@ main {
 
 /* Modal Content */
 .modal-content {
+	font-size: 2rem;
+	height: 50vh;
+	background-color: #fefefe;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+.guest-modal-content {
 	text-align: center;
 	font-size: 2rem;
 	height: 50vh;
@@ -263,7 +276,7 @@ main {
 /* The Close Button */
 .close {
 	color: #aaaaaa;
-	float: right;
+	align-self: flex-end;
 	font-size: 28px;
 	font-weight: bold;
 }
