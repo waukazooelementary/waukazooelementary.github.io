@@ -39,9 +39,8 @@ let hasFired = false;
 
 guest.onkeydown = function() {
   if (!hasFired) {
-    $("#guestName").prop("readonly", true)
+    $("#guestName").prop("readonly", true);
     guestModal.style.display = "block";
-    hasFired = true;
   } else {
     $("#guestName").prop("readonly", false);
     guestModal.style.display = "none";
@@ -50,5 +49,6 @@ guest.onkeydown = function() {
 
 okBtn.onclick = function() {
   $("#guestName").prop("readonly", false);
+  hasFired = true;
   guestModal.style.display = "none";
 };
