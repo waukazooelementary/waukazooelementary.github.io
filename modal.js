@@ -46,14 +46,6 @@ guest.onkeydown = function() {
 	}
 };
 
-guestOut.onkeydown = function() {
-	if (!hasFired) {
-		guestModal.style.display = 'block';
-	} else {
-		guestModal.style.display = 'none';
-	}
-};
-
 okBtn.onclick = function() {
 	hasFired = true;
 	guestModal.style.display = 'none';
