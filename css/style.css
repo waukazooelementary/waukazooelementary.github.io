@@ -276,7 +276,7 @@ main {
 /* The Close Button */
 .close {
 	color: #aaaaaa;
-	align-self: flex-end;
+	text-align: right;
 	font-size: 28px;
 	font-weight: bold;
 }

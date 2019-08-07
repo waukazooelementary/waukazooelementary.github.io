@@ -35,9 +35,18 @@ window.onclick = function(event) {
 const guestModal = document.getElementById('guestModal');
 const okBtn = document.getElementById('ok');
 const guest = document.getElementById('guestName');
+const guestOut = document.getElementById('guestOut');
 let hasFired = false;
 
 guest.onkeydown = function() {
+	if (!hasFired) {
+		guestModal.style.display = 'block';
+	} else {
+		guestModal.style.display = 'none';
+	}
+};
+
+guestOut.onkeydown = function() {
 	if (!hasFired) {
 		guestModal.style.display = 'block';
 	} else {
