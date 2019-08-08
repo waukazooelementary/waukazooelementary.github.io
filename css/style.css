@@ -249,8 +249,7 @@ main {
 
 /* Modal Content */
 .modal-content {
-	font-size: 2rem;
-	height: 50vh;
+	font-size: 1.5rem;
 	background-color: #fefefe;
 	display: grid;
 	align-content: center;
@@ -263,8 +262,7 @@ main {
 
 .guest-modal-content {
 	text-align: center;
-	font-size: 2rem;
-	height: 50vh;
+	font-size: 1.5rem;
 	display: grid;
 	align-content: center;
 	background-color: #fefefe;
