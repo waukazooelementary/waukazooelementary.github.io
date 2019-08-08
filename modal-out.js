@@ -31,21 +31,20 @@ window.onclick = function(event) {
 	}
 };
 
-//Guest Modal//
-const guestModal = document.getElementById('guestModal');
-const okBtn = document.getElementById('ok');
-const guest = document.getElementById('guestName');
-let hasFired = false;
-
-guest.onkeydown = function() {
-	if (!hasFired) {
-		guestModal.style.display = 'block';
+const guestOutModal = document.getElementById('guestOutModal');
+const guestOut = document.getElementById('guestOut');
+const outOk = document.getElementById('outOk');
+let outHasFired = false;
+console.log(guestOut);
+guestOut.onkeydown = function() {
+	if (!outHasFired) {
+		guestOutModal.style.display = 'block';
 	} else {
-		guestModal.style.display = 'none';
+		guestOutModal.style.display = 'none';
 	}
 };
 
-okBtn.onclick = function() {
-	hasFired = true;
-	guestModal.style.display = 'none';
+outOk.onclick = function() {
+	outHasFired = true;
+	guestOutModal.style.display = 'none';
 };
